@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Danphe</title>
+    <style>
+    	* {
+    		padding: 0 0 0 0;
+    		margin: 0 0 0 0;
+    	}
+    	body {
+    		background-image: url('./danphe.jpg');
+  			background-size: cover;
+  			background-repeat: no-repeat;
+    	}
+    	#container {
+    		display:flex;
+  			align-items:center;
+  			justify-content:center;
+  			height:100vh;
+  			width:100vw;
+    	}
+    	#css {
+    		height:500px;
+    		width:300px;
+    		border:5px solid red;
+    	}
+    	#js{
+    		border: 2px solid green;
+    		width:100vw;
+    		min-height:20vh;
+    		background-color:white;
+    		padding:0.5rem;
+    		display:flex;
+    		flex-direction:column;
+    	}
+    	
+    	@media (max-width: 600px) {
+  			#css {
+  				width:100vw;
+  			}
+			}
+    </style>
+  </head>
+  <body>
+  	<div id="container">
+  		<div id="css"></div>	
+ 		</div>
+ 		
+<div id="js"></div>
+<script>
+// FizzBuzz problem
+  var jsDiv = document.getElementById("js");
+
+  var abtn = document.createElement("button");
+  abtn.style.fontSize = "1rem";
+  abtn.textContent = "Puts FizzBuzz on the console!";
+  jsDiv.appendChild(abtn);
+
+  function fizzbuzz(num) {
+  	for (i = 1; i <= num; i++) {
+  		if (i % 3 == 0 && i % 5 == 0) {
+  			console.log("FizzBuzz")
+  			
+  		}
+  		else if (i % 5 == 0) {
+  			console.log("Fizz")
+  		}
+  		else if (i % 3 == 0) {
+  			console.log("Buzz")
+  		}
+  		else {
+  			console.log(i)
+  		}
+  	}
+  }
+  abtn.addEventListener('click', function() {
+  	fizzbuzz(100)
+  });
+</script>
+
+  </body>
+</html>
