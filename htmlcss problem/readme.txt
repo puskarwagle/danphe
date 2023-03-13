@@ -28,3 +28,42 @@ Write a program that prints the number from 1 to 100.
 But for multiples of three print “Fizz” instead of the number & 
 for the multiples of five print “Buzz”. However, for numbers which 
 are multiples of both three and five print “ FizzBuzz” instead.
+
+
+
+
+import React, { useState } from "react";
+
+const colors = ["red", "green", "blue", "black", "orange"];
+
+function App() {
+  const [previousColor, setPreviousColor] = useState(null);
+  const [currentColor, setCurrentColor] = useState(null);
+
+  function handleChangeColor() {
+    let newColor;
+
+    if (previousColor === "blue") {
+      newColor = "green";
+    } else {
+      newColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    setCurrentColor(newColor);
+    setPreviousColor(newColor);
+  }
+
+  return (
+    <div>
+      <button
+        style={{ fontSize: "1rem", backgroundColor: currentColor }}
+        onClick={handleChangeColor}
+      >
+        {currentColor ? currentColor : "change colors on click"}
+      </button>
+    </div>
+  );
+}
+
+export default App;
+
